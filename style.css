@@ -1,11 +1,24 @@
+@font-face {
+    font-family: roboto-extraLight;
+    src: url(fonts/Roboto-ExtraLight.ttf) format('truetype');
+}
+@font-face {
+    font-family: roboto-cond;
+    src: url(fonts/Roboto_SemiCondensed-Regular.ttf) format('truetype');
+}
 * {
     margin: 0;
     padding: 0;
+    font-family: roboto-cond, roboto-extraLight, Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
-
+body {
+    height: 100vh;
+}
 .container {
+    height: 100%;
     display: grid;
-    grid-template-columns: minmax(175px, 1fr) 6fr;
+    grid-template-columns: minmax(240px, 1fr) 6fr;
     grid-template-rows: 1fr 6fr;
     grid-auto-flow: row;
 }
@@ -31,20 +44,21 @@
 .blueButtons {
     grid-area: blueButtons;
 }
-.sidebar {
-    background-color: #1992D4;
-    grid-area: 1/1/3/2;
-}
 
 .main {
     background-color: #E2E8F0;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 40px 3fr 3fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.main-containers-projects {
+    display: flex;
+    flex-direction: column;
 }
 .projects {
     margin: 20px;
-    grid-area: 2/1/4/2;
+    grid-area: 1/1/3/2;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
@@ -52,9 +66,57 @@
         border: solid thick black;
     }
 }
-.announcements {
+.main-containers-announcements {
     grid-area: 1/2/2/3;
 }
-.trending {
+.main-containers-trending {
     grid-area: 2/2/3/3;
+}
+
+/*SIDEBAR CSS*/
+.sidebar {
+    background-color: #1992D4;
+    grid-area: 1/1/3/2;
+
+    >.logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 1.3rem 0.9rem;
+        font-size: 1.3rem;
+        color: aliceblue; 
+    }
+    >.nav {
+        
+        font-size: 16px;
+        color: aliceblue;
+        padding :0.5rem 2rem;
+
+        > ul {
+            list-style-type: none;
+
+            > li {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                margin: 1rem 0;
+
+                > img {
+                    margin-right: 1rem;
+                    fill: white;
+                }
+            }
+        }
+    }
+}
+#logoImg {
+   margin-right: 1rem;
+}
+/* Main Cards CSS */
+.card {
+    padding: 2rem;
+}
+.cardIcon {
+    height: 24px;
+    width: 24px;
 }
