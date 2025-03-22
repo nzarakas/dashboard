@@ -6,15 +6,18 @@
     font-family: roboto-cond;
     src: url(fonts/Roboto_SemiCondensed-Regular.ttf) format('truetype');
 }
+
 * {
     margin: 0;
     padding: 0;
     font-family: roboto-cond, roboto-extraLight, Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
+
 body {
     height: 100vh;
 }
+
 .container {
     height: 100%;
     display: grid;
@@ -108,14 +111,6 @@ body {
     }
 }
 /* Main Cards CSS */
-.card {
-    padding: 2rem;
-}
-.cardIcon {
-    height: 24px;
-    width: 24px;
-}   
-
 .main {
     padding: 1rem;
     background-color: #E2E8F0;
@@ -123,29 +118,90 @@ body {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
-
+.main-headers {
+    font-size: 1.4rem;
+}
 .main-containers-projects {
     display: flex;
     flex-direction: column;
 }
 .projects {
-    margin: 20px;
+    margin: 1.3rem 0;
     grid-area: 1/1/3/2;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    
     gap: 20px;
     > .card {
-        border: solid thick black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:flex-end;
+        height: 280px;
+        border: 0;
+        border-radius: 10px;
+        box-shadow: 3px 2px 3px 2px #CCD1D9,
+                    inset 7px 0px rgb(238, 192, 64);
+        padding: 1.5rem;
+        background-color: #FFFFFF;
+        
+        >.card-icon-div {
+            display: flex;
+            flex-direction: row;
+        }  
+        
+        >div .card-header {
+            font-size: 1.2rem;
+            padding: 4px 0;
+        }
+        >div .card-text {
+            padding-bottom: 1.5rem;
+            line-height: 1.5rem;
+            font-family: roboto-extraLight;
+            color: #757575;
+        }
+
     }
 }
+
+.cardIcon {
+    height: 24px;
+    width: 24px;
+}
+/* Announcements CSS  */
 .main-containers-announcements {
     grid-area: 1/2/2/3;
+    margin: 0 20px;
 }
+.announcements {
+    background-color: white;
+    margin: 1.3rem 0;
+    padding: 0.5rem 1.6rem;
+    border-radius: 10px;
+    box-shadow: 3px 2px 3px 2px #CCD1D9;
+    background-color: #FFFFFF;
+    > .ann {
+        padding: 1rem;
+        font-size: 1.2rem;
+        box-shadow:  0px 1px 0px 0px #CCD1D9;
+        >.ann-text {
+            padding-top: 7px;
+            line-height: 1.5rem;
+            font-family: roboto-extraLight;
+            color: #757575;
+        }
+    }
+}
+
+#last-ann {
+    box-shadow: none;
+}
+/* Trending CSS */
 .main-containers-trending {
     grid-area: 2/2/3/3;
 }
 
-/*SIDEBAR CSS*/
+/*Sidebar CSS*/
 .sidebar {
     background-color: #1992D4;
     grid-area: 1/1/3/2;
