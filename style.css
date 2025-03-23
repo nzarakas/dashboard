@@ -243,7 +243,7 @@ body {
 
 /*Sidebar CSS*/
 .sidebar {
-    
+    position: relative;
     background-color: #1992D4;
     grid-area: 1/1/3/2;
     z-index: 2;
@@ -281,4 +281,18 @@ body {
 }
 #logoImg {
    margin-right: 1rem;
+}
+.credits {
+    padding : 0 2rem;
+    position: absolute;
+    bottom: 4rem;
+    > p {
+    color: white;
+    font-family: roboto-extraLight;
+    font-size: 0.7rem;
+    > a {
+        color: white;
+        font-family: roboto-extraLight;
+    }
+    }
 }
