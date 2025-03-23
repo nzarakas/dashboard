@@ -110,21 +110,35 @@ body {
         }
     }
 }
-/* Main Cards CSS */
+/*Main area CSS */
 .main {
     padding: 1rem;
     background-color: #E2E8F0;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 .main-headers {
     font-size: 1.4rem;
 }
+
 .main-containers-projects {
+    grid-area: 1/1/3/2;
     display: flex;
     flex-direction: column;
 }
+
+.main-containers-announcements {
+    grid-area: 1/2/2/3;
+    margin: 0 20px;
+}
+
+.main-containers-trending {
+    grid-area: 2/2/3/3;
+    margin: 0 20px;
+}
+
+/* Main Cards CSS */
 .projects {
     margin: 1.3rem 0;
     grid-area: 1/1/3/2;
@@ -169,13 +183,10 @@ body {
     height: 24px;
     width: 24px;
 }
+
 /* Announcements CSS  */
-.main-containers-announcements {
-    grid-area: 1/2/2/3;
-    margin: 0 20px;
-}
+
 .announcements {
-    background-color: white;
     margin: 1.3rem 0;
     padding: 0.5rem 1.6rem;
     border-radius: 10px;
@@ -198,12 +209,41 @@ body {
     box-shadow: none;
 }
 /* Trending CSS */
-.main-containers-trending {
-    grid-area: 2/2/3/3;
+
+.trending {
+    margin: 1.3rem 0;
+    padding: 0.5rem 0rem;
+    border-radius: 10px;
+    box-shadow: 3px 2px 3px 2px #CCD1D9;
+    background-color: #FFFFFF;
+
+    >.trending-piece{
+        
+        color: #757575;
+        font-size: 1.2rem;
+        margin: 25px;
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: 1.5rem 1.5rem;
+        align-items: center;
+        > p {
+            font-family: roboto-extraLight;
+        }
+        >.username {
+            font-family: roboto-cond;
+            color: #1f1e1e;
+            font-size: 1.2rem;
+        }
+        >img {
+            grid-area: 1/1/3/2;
+        }
+    }
+    
 }
 
 /*Sidebar CSS*/
 .sidebar {
+    
     background-color: #1992D4;
     grid-area: 1/1/3/2;
     z-index: 2;
@@ -213,12 +253,12 @@ body {
         flex-direction: row;
         align-items: center;
         margin: 1.3rem 0.9rem;
-        font-size: 1.3rem;
+        font-size: 1.8rem;
         color: aliceblue; 
     }
     >.nav {
         
-        font-size: 16px;
+        font-size: 1.3rem;
         color: aliceblue;
         padding :0.5rem 2rem;
 
